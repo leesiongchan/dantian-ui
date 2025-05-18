@@ -1,0 +1,13 @@
+{
+  "name": "dantian-ui",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^9.26.0",
+    "prettier": "^3.5.3",
+    "typescript": "~5.8.3"
+  },
+  "packageManager": "pnpm@10.7.1",
+  "engines": {
+    "node": ">=22"
+  }
+}

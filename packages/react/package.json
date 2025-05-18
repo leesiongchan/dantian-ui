@@ -1,0 +1,33 @@
+{
+  "name": "@dantian-ui/react",
+  "version": "0.0.0",
+  "description": "High level reusable React components built on top of Chakra UI.",
+  "type": "module",
+  "main": "src/index.ts",
+  "author": "Lee Siong Chan <leesiongchan@duck.com>",
+  "license": "MIT",
+  "keywords": [
+    "components",
+    "design-system",
+    "library",
+    "react-components",
+    "react",
+    "uikit"
+  ],
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.19.1",
+    "@emotion/react": "^11.14.0",
+    "embla-carousel-react": "^8.6.0"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@dantian-ui/eslint-config": "workspace:*",
+    "@tsconfig/vite-react": "^3.4.0",
+    "@types/react": "^19.1.2"
+  }
+}

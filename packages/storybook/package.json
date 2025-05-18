@@ -1,0 +1,28 @@
+{
+  "name": "@dantian-ui/storybook",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "storybook build",
+    "dev": "storybook dev -p 6006",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.19.1",
+    "@dantian-ui/react": "workspace:*",
+    "@emotion/react": "^11.14.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@dantian-ui/eslint-config": "workspace:*",
+    "@storybook/addon-themes": "9.0.0-rc.2",
+    "@storybook/react-vite": "9.0.0-rc.2",
+    "@tsconfig/node-lts": "^22.0.1",
+    "@tsconfig/node-ts": "^23.6.1",
+    "@tsconfig/vite-react": "^3.4.0",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "storybook": "9.0.0-rc.2",
+    "vite": "^6.3.5"
+  }
+}
