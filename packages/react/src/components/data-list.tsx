@@ -1,3 +1,5 @@
+"use client";
+
 import { DataList as BaseDataList } from "@chakra-ui/react";
 import React from "react";
 

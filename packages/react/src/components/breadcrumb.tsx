@@ -1,3 +1,5 @@
+"use client";
+
 import { Breadcrumb as BaseBreadcrumb, Show } from "@chakra-ui/react";
 import React from "react";
 

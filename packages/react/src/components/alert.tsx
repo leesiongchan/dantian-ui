@@ -1,3 +1,5 @@
+"use client";
+
 import { Alert as BaseAlert } from "@chakra-ui/react";
 import React from "react";
 

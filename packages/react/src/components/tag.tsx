@@ -1,3 +1,5 @@
+"use client";
+
 import { Tag as BaseTag } from "@chakra-ui/react";
 import React from "react";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { Checkbox as BaseCheckbox } from "@chakra-ui/react";
 import React from "react";
 
