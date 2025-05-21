@@ -8,4 +8,5 @@ export * from "./combobox";
 export * from "./data-list";
 export * from "./input";
 export * from "./select";
+export * from "./slider";
 export * from "./tag";
