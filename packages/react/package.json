@@ -20,7 +20,8 @@
   "dependencies": {
     "@chakra-ui/react": "^3.19.1",
     "@emotion/react": "^11.14.0",
-    "embla-carousel-react": "^8.6.0"
+    "embla-carousel-react": "^8.6.0",
+    "es-toolkit": "^1.38.0"
   },
   "peerDependencies": {
     "react": "^19.1.0"

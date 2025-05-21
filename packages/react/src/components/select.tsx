@@ -5,6 +5,7 @@ import {
   createListCollection,
   Portal,
 } from "@chakra-ui/react";
+import { groupBy } from "es-toolkit";
 
 export const Select = ({ items, placeholder, ...props }: SelectProps) => {
   const collection = createListCollection({
@@ -13,6 +14,9 @@ export const Select = ({ items, placeholder, ...props }: SelectProps) => {
     itemToString: (item) => item.label,
     itemToValue: (item) => item.value,
   });
+  const categories = Object.entries(
+    groupBy(collection.items, (item) => item.category || "other")
+  );
 
   return (
     <BaseSelect.Root {...props} collection={collection}>
@@ -28,12 +32,33 @@ export const Select = ({ items, placeholder, ...props }: SelectProps) => {
       <Portal>
         <BaseSelect.Positioner>
           <BaseSelect.Content>
-            {collection.items.map((item) => (
-              <BaseSelect.Item item={item} key={item.value}>
-                {item.label}
-                <BaseSelect.ItemIndicator />
-              </BaseSelect.Item>
-            ))}
+            {categories.length > 1 &&
+              categories.map(([category, items]) => (
+                <BaseSelect.ItemGroup key={category}>
+                  <BaseSelect.ItemGroupLabel
+                    textTransform="uppercase"
+                    fontSize="xs"
+                    color="fg.muted"
+                    letterSpacing="wider"
+                    fontWeight="medium"
+                  >
+                    {category}
+                  </BaseSelect.ItemGroupLabel>
+                  {items.map((item) => (
+                    <BaseSelect.Item item={item} key={item.value}>
+                      {item.label}
+                      <BaseSelect.ItemIndicator />
+                    </BaseSelect.Item>
+                  ))}
+                </BaseSelect.ItemGroup>
+              ))}
+            {categories.length === 1 &&
+              collection.items.map((item) => (
+                <BaseSelect.Item item={item} key={item.value}>
+                  {item.label}
+                  <BaseSelect.ItemIndicator />
+                </BaseSelect.Item>
+              ))}
           </BaseSelect.Content>
         </BaseSelect.Positioner>
       </Portal>
@@ -47,6 +72,7 @@ export interface SelectProps
 }
 
 interface SelectItem {
+  category?: string;
   disabled?: boolean;
   label: string;
   value: string;

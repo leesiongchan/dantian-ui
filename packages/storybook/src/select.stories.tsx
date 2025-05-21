@@ -21,3 +21,16 @@ export const Basic = {
     placeholder: "Select a framework",
   },
 } satisfies Story;
+
+export const Group = {
+  args: {
+    items: [
+      { label: "React.js", value: "react", category: "JavaScript" },
+      { label: "Vue.js", value: "vue", category: "JavaScript" },
+      { label: "Angular", value: "angular", category: "JavaScript" },
+      { label: "Svelte", value: "svelte", category: "JavaScript" },
+      { label: "Django", value: "django", category: "Python" },
+      { label: "Flask", value: "flask", category: "Python" },
+    ],
+  },
+} satisfies Story;
