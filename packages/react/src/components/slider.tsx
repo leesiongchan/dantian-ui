@@ -5,6 +5,7 @@ import {
   For,
   SliderThumbProps,
   useSliderContext,
+  UseSliderProps,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -23,7 +24,7 @@ export const Slider = React.forwardRef<HTMLDivElement, SliderProps>(
     );
   }
 );
-export interface SliderProps extends BaseSlider.RootProps {
+export interface SliderProps extends UseSliderProps {
   marks?: Array<number | { value: number; label: React.ReactNode }>;
 }
 

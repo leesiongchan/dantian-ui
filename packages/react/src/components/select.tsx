@@ -4,6 +4,7 @@ import {
   Select as BaseSelect,
   createListCollection,
   Portal,
+  UseSelectProps,
 } from "@chakra-ui/react";
 import { groupBy } from "es-toolkit";
 
@@ -66,7 +67,7 @@ export const Select = ({ items, placeholder, ...props }: SelectProps) => {
   );
 };
 export interface SelectProps
-  extends Omit<BaseSelect.RootProps, "children" | "collection"> {
+  extends Omit<UseSelectProps<SelectItem>, "collection"> {
   items: SelectItem[];
   placeholder?: string;
 }
