@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
 import {
   Select as BaseSelect,
   createListCollection,
   Portal,
   UseSelectProps,
-} from "@chakra-ui/react";
-import { groupBy } from "es-toolkit";
+} from '@chakra-ui/react'
+import { groupBy } from 'es-toolkit'
 
 export const Select = ({ items, placeholder, ...props }: SelectProps) => {
   const collection = createListCollection({
@@ -14,10 +14,8 @@ export const Select = ({ items, placeholder, ...props }: SelectProps) => {
     isItemDisabled: (item) => item.disabled ?? false,
     itemToString: (item) => item.label,
     itemToValue: (item) => item.value,
-  });
-  const categories = Object.entries(
-    groupBy(collection.items, (item) => item.category || "other")
-  );
+  })
+  const categories = Object.entries(groupBy(collection.items, (item) => item.category || 'other'))
 
   return (
     <BaseSelect.Root {...props} collection={collection}>
@@ -64,17 +62,16 @@ export const Select = ({ items, placeholder, ...props }: SelectProps) => {
         </BaseSelect.Positioner>
       </Portal>
     </BaseSelect.Root>
-  );
-};
-export interface SelectProps
-  extends Omit<UseSelectProps<SelectItem>, "collection"> {
-  items: SelectItem[];
-  placeholder?: string;
+  )
+}
+export interface SelectProps extends Omit<UseSelectProps<SelectItem>, 'collection'> {
+  items: SelectItem[]
+  placeholder?: string
 }
 
 interface SelectItem {
-  category?: string;
-  disabled?: boolean;
-  label: string;
-  value: string;
+  category?: string
+  disabled?: boolean
+  label: string
+  value: string
 }

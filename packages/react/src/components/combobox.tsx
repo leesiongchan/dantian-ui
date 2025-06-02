@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Combobox as BaseCombobox,
@@ -7,26 +7,22 @@ import {
   useComboboxContext,
   useFilter,
   useListCollection,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 
-export const Combobox = ({
-  items: initialItems,
-  label,
-  ...props
-}: ComboboxProps) => {
-  const { contains } = useFilter({ sensitivity: "base" });
+export const Combobox = ({ items: initialItems, label, ...props }: ComboboxProps) => {
+  const { contains } = useFilter({ sensitivity: 'base' })
   const { collection, filter } = useListCollection({
     filter: contains,
     initialItems,
-  });
+  })
 
   return (
     <BaseCombobox.Root
       {...props}
       collection={collection}
       onInputValueChange={(e) => {
-        filter(e.inputValue);
-        props.onInputValueChange?.(e);
+        filter(e.inputValue)
+        props.onInputValueChange?.(e)
       }}
     >
       {label && <BaseCombobox.Label>{label}</BaseCombobox.Label>}
@@ -48,15 +44,15 @@ export const Combobox = ({
         </BaseCombobox.Positioner>
       </Portal>
     </BaseCombobox.Root>
-  );
-};
-export type ComboboxProps = Omit<BaseCombobox.RootProps, "collection"> & {
-  items: ComboboxItemProps[];
-  label?: React.ReactNode;
-};
+  )
+}
+export type ComboboxProps = Omit<BaseCombobox.RootProps, 'collection'> & {
+  items: ComboboxItemProps[]
+  label?: React.ReactNode
+}
 
 const ComboboxItem = (props: ComboboxItemProps) => {
-  const combobox = useComboboxContext();
+  const combobox = useComboboxContext()
 
   return (
     <BaseCombobox.Item item={props}>
@@ -64,16 +60,16 @@ const ComboboxItem = (props: ComboboxItemProps) => {
         <Highlight
           ignoreCase
           query={combobox.inputValue}
-          styles={{ bg: "yellow", fontWeight: "medium" }}
+          styles={{ bg: 'yellow', fontWeight: 'medium' }}
         >
           {props.label}
         </Highlight>
       </BaseCombobox.ItemText>
     </BaseCombobox.Item>
-  );
-};
+  )
+}
 
 interface ComboboxItemProps {
-  label: string;
-  value: string;
+  label: string
+  value: string
 }

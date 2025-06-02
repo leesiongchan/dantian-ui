@@ -1,1 +1,1 @@
-export { Input, type InputProps } from "@chakra-ui/react";
+export { Input, type InputProps } from '@chakra-ui/react'

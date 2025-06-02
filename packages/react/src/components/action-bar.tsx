@@ -1,11 +1,7 @@
-"use client";
+'use client'
 
-import {
-  ActionBar as BaseActionBar,
-  CloseButton,
-  Portal,
-} from "@chakra-ui/react";
-import React from "react";
+import { ActionBar as BaseActionBar, CloseButton, Portal } from '@chakra-ui/react'
+import React from 'react'
 
 export const ActionBar = ({
   actionTriggers,
@@ -20,9 +16,7 @@ export const ActionBar = ({
         <BaseActionBar.Positioner>
           <BaseActionBar.Content>
             {selectionTrigger && (
-              <BaseActionBar.SelectionTrigger>
-                {selectionTrigger}
-              </BaseActionBar.SelectionTrigger>
+              <BaseActionBar.SelectionTrigger>{selectionTrigger}</BaseActionBar.SelectionTrigger>
             )}
 
             {actionTriggers && actionTriggers.length > 0 && (
@@ -41,12 +35,11 @@ export const ActionBar = ({
         </BaseActionBar.Positioner>
       </Portal>
     </BaseActionBar.Root>
-  );
-};
-export interface ActionBarProps
-  extends Omit<BaseActionBar.RootProps, "children"> {
-  actionTriggers?: React.ReactNode[];
-  closeable?: boolean;
-  onClose?: VoidFunction;
-  selectionTrigger?: React.ReactNode;
+  )
+}
+export interface ActionBarProps extends Omit<BaseActionBar.RootProps, 'children'> {
+  actionTriggers?: React.ReactNode[]
+  closeable?: boolean
+  onClose?: VoidFunction
+  selectionTrigger?: React.ReactNode
 }
