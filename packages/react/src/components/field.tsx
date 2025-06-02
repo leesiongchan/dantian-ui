@@ -4,7 +4,7 @@ import { Field as BaseField } from '@chakra-ui/react'
 
 export const Field = ({ children, errorText, helperText, label, ...props }: FieldProps) => {
   return (
-    <BaseField.Root {...props}>
+    <BaseField.Root invalid={!!errorText} {...props}>
       {label && (
         <BaseField.Label>
           {label}
