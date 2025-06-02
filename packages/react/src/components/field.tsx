@@ -2,16 +2,23 @@
 
 import { Field as BaseField } from '@chakra-ui/react'
 
-export const Field = ({ children, ...props }: FieldProps) => {
+export const Field = ({ children, errorText, helperText, label, ...props }: FieldProps) => {
   return (
     <BaseField.Root {...props}>
-      <BaseField.Label>
-        <BaseField.RequiredIndicator />
-      </BaseField.Label>
+      {label && (
+        <BaseField.Label>
+          {label}
+          {props.required && <BaseField.RequiredIndicator />}
+        </BaseField.Label>
+      )}
       {children}
-      <BaseField.HelperText />
-      <BaseField.ErrorText />
+      {helperText && <BaseField.HelperText />}
+      {errorText && <BaseField.ErrorText />}
     </BaseField.Root>
   )
 }
-export type FieldProps = BaseField.RootProps
+export type FieldProps = BaseField.RootProps & {
+  errorText?: React.ReactNode
+  helperText?: React.ReactNode
+  label?: React.ReactNode
+}
