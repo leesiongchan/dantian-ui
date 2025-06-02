@@ -6,7 +6,6 @@ export const Card = ({ children, footer, header, ...props }: CardProps) => {
   return (
     <BaseCard.Root {...props}>
       {header && <BaseCard.Header>{header}</BaseCard.Header>}
-      <BaseCard.Header />
       <BaseCard.Body>{children}</BaseCard.Body>
       {footer && <BaseCard.Footer>{footer}</BaseCard.Footer>}
     </BaseCard.Root>
